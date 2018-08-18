@@ -1,4 +1,6 @@
 # gopool
+[![Build Status](https://travis-ci.org/souma946/gopool.svg?branch=master)](https://travis-ci.org/souma946/gopool) 
+
 gopool is useful when you want to control the number of concurrent executions
 
 

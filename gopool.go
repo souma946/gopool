@@ -3,7 +3,6 @@ package gopool
 import (
 	"context"
 	"fmt"
-	"log"
 	"sync"
 	"time"
 )
@@ -104,7 +103,6 @@ func (p *WorkerPool) Shutdown(timeout time.Duration) {
 	go func() {
 		select {
 		case <-time.After(timeout * time.Second):
-			log.Println("start cancel")
 			done <- struct{}{}
 		}
 	}()

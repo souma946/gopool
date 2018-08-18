@@ -2,10 +2,9 @@ package main
 
 import (
 	"context"
-	"gopool"
 	"log"
 
-	_ "github.com/souma946/gopool"
+	"github.com/souma946/gopool"
 )
 
 type (
