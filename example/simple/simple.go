@@ -2,19 +2,24 @@ package main
 
 import (
 	"context"
+	"gopool"
 	"log"
 
 	_ "github.com/souma946/gopool"
 )
 
+type (
+	sampleKey string
+)
+
 const (
-	key = "num"
+	key sampleKey = "num"
 )
 
 func main() {
-	d := pool.NewWorkerPool(1)
+	d := gopool.NewWorkerPool(1)
 	ctx := context.Background()
-	ctx = context.WithValue(ctx, key, i)
+	ctx = context.WithValue(ctx, key, 100)
 	d.Execute(ctx, func(ctx context.Context) error {
 		arg := ctx.Value(key).(int)
 		log.Printf("hello world %d\n", arg)
